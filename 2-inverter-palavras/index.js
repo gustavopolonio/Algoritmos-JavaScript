@@ -14,30 +14,36 @@
   "Prometo que esse é o último" deve retornar "otemorP que esse é o omitlú"
 */
 
+/*
+ - Tranfomar string num Array => split()
+ - for pelo para analisar cada uma das posições (palavras)
+ - if else => palavra tem 5 ou mais letras
+ - Se tiver => inverter a palavra. como?
+   - transformar a palvra (string) num array => split()
+   - inverter o array => reverse()
+   - juntar as letras desse array => join()
+ - Juntar as palavras do array => join()
+*/
 
-function spinWords1(string) {
+function spinWord(string) {
   const words = string.split(" ")
-
   for (var i = 0; i < words.length; i++) {
-
     if (words[i].length > 4) {
       words[i] = words[i].split("").reverse().join("")
     }
-
   }
 
   return words.join(" ")
 }
 
-
-function spinWords2(string) {
-  return string.split(" ").map(word => {
-    return (word.length > 4) ? word.split("").reverse().join("") : word
-  }).join(" ")
+function spinWord2(string) {
+  return string.split(" ").map(word => 
+    (word.length > 4) ? word.split("").reverse().join("") : word
+  ).join(" ")
 }
 
 
 
-const str = "Prometo que esse é o último"
-const answer = spinWords1(str)
-console.log(answer)
+const str = "Casa Branca e verde"
+const ans = spinWord2(str)
+console.log(ans)
